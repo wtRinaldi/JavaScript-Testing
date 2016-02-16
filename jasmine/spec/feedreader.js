@@ -21,6 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+         // tests each allFeed are defined
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -29,6 +30,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         // tests that each URL is defined
         it('URL are defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
@@ -39,6 +41,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         // tests that each name is defined
         it('names are defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
@@ -53,6 +56,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+         // tests that original state of menu is hidden
         it('menu is hidden', function() {
             expect($(document.body).hasClass('menu-hidden')).toBe(true);
         });
@@ -61,6 +65,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          // tests that menu toggles
         it('menu icon toggles menu', function() {
             $('.menu-icon-link').trigger('click');
             expect($(document.body).hasClass('menu-hidden')).toBe(false);
@@ -82,7 +87,7 @@ $(function() {
                 done();
             });
         });
-
+        // test that there is at least one entry in .feed
         it('at least one entry in .feed', function(done) {
             var entry = $('.feed .entry-link').length;
             expect(entry).toBeGreaterThan(0);
@@ -104,7 +109,7 @@ $(function() {
                 done();
             });
         });
-
+        // tests that loadFeed is changing content
         it('content has changed', function(done) {
             loadFeed(1, function() {
                 after = $('.feed').html();
