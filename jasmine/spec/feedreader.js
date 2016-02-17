@@ -32,8 +32,8 @@ $(function() {
          // tests that each URL is defined
         it('have defined URLs', function() {
             allFeeds.forEach(function(feed) {
-                var length = feed.url.length;
-                expect(length).toBeGreaterThan(0);
+            	expect(feed.url).toBeDefined();
+                expect(feed.url.length).toBeGreaterThan(0);
             });
         });
         /* Write a test that loops through each feed
@@ -43,9 +43,9 @@ $(function() {
          // tests that each name is defined
         it('have names defined', function() {
             allFeeds.forEach(function(feed) {
-                var length = feed.name.length;
-                expect(length).toBeGreaterThan(0);
-            })
+            	expect(feed.name).toBeDefined();
+                expect(feed.name.length).toBeGreaterThan(0);
+            });
          });
     });
     /* Write a new test suite named "The menu" */
@@ -56,7 +56,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          // tests that original state of menu is hidden
-        it('is hidden', function() {
+        it('is hidden by default', function() {
             expect($(document.body).hasClass('menu-hidden')).toBe(true);
         });
          /* Write a test that ensures the menu changes
@@ -82,15 +82,12 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done){
-            loadFeed(0, function(){
-                done();
-            });
+            loadFeed(0, done);
         });
         // test that there is at least one entry in .feed
-        it('have at least one entry in .feed', function(done) {
+        it('have at least one entry in .feed', function() {
             var entry = $('.feed .entry-link').length;
             expect(entry).toBeGreaterThan(0);
-            done();
         });
 
     });
@@ -111,9 +108,8 @@ $(function() {
             });
         });
         // tests that loadFeed is changing content
-        it('should change content', function(done) {
+        it('should change content', function() {
             expect(before != after).toBe(true);
-            done();
         });
     });
 
