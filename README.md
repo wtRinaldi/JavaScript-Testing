@@ -20,7 +20,7 @@ This project utilizes Jasmine.  Jasmine is a behavior-driven development framewo
 ## Installation
 
 Download files from github repo and open index.html in browswer window.
-The test have been written in the feedreader.js file locatated here - https://github.com/wtRinaldi/JavaScript-Testing/blob/master/jasmine/spec/feedreader.js
+The test have been written in the feedreader.js file which is located here - https://github.com/wtRinaldi/JavaScript-Testing/blob/master/jasmine/spec/feedreader.js
 
 
 ## Front-End Developer Nanodegree
